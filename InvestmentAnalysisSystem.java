@@ -32,7 +32,7 @@ public class InvestmentAnalysisSystem {
     public static double sumAtTermPlusFinalCouponPayment(double invest, double coupon, double frequency) {
 
 
-        double couponInPercent = coupon * 1 / 100;
+        double couponInPercent = coupon * 0.01;
 
         double investorsReceiveBack = invest * couponInPercent * frequency;
 
