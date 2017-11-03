@@ -5,47 +5,53 @@ public class InvestmentAnalysisSystem {
 */
 
 
+    private Scanner src
+
+    private int coupon = 10; //paid to investor at regular intervals  --> should be in percentage.
 
 
+    private int investedSum = 0;
 
-    int coupon = 10; //paid to investor at regular intervals  --> should be in percentage.
+    private int price = 0; //investor pays this with sum invested
+
+    private int payout = 0;
+
+    private boolean inflation = true;
 
 
+    public InvestmentAnalysisSystem() {
 
-    int investedSum = 0;
+        src = new Scanner(System.in);
 
-    int price = 0; //investor pays this with sum invested
-
-    int payout = 0;
+    }
 
 
     private double investorsReceiveBack;
 
 
+    public static double sumAtTermPlusFinalCouponPayment(double invest, double coupon, double frequency) {
 
 
+        double couponInPercent = coupon * 1 / 100;
 
-    public static double sumAtTermPlusFinalCouponPayment (double invest, double coupon, double frequency){
+        double investorsReceiveBack = invest * couponInPercent * frequency;
 
+        if (inflation) {
 
-
-        double couponInPercent = coupon * 1/100;
-
-        double investorsReceiveBack  = invest * couponInPercent * frequency;
-
+            sumAtTermPlusFinalCouponPayment(investorsReceiveBack, r , frequency)
+        }
         return investorsReceiveBack;
-
-
-
 
 
     }
 
 
+    public double macaulayDuration(double coupon, double value) {
+
+    }
 
 
-
-    public double sumOfDiscountedPaymentsWithInflationRateApplied(double sum, double x, double r, double N) {
+    public double sumOfDiscountedPaymentsWithInflationRateApplied(double value, double r, double N) {
 
         /*
         int x = 0;//value
@@ -55,31 +61,13 @@ public class InvestmentAnalysisSystem {
 
         double discountedPaymets = 0.0; //result
 
-
-        discountedPaymets = sum / (1+r)^N;
-
-
-
-
-/*
-        result = x * 1/(1+r)^N;
-*/
-
+        discountedPaymets = sum / (1 + r) ^ N;
 
 
         return discountedPaymets;
 
 
     }
-
-
-
-
-
-
-
-
-
 
 
 }
