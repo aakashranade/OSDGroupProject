@@ -9,9 +9,9 @@ public class Bond {
 
     private String expiryDate;
 
-    private double coupon = 0;  //percentage of investment, paid to investor at regular intervals.
+    private double coupon;  //percentage of investment, paid to investor at regular intervals.
 
-    private double frequency = 1; //year
+    private double frequency; //year
 
     private double price;
 
