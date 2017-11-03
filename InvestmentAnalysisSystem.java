@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class InvestmentAnalysisSystem {
 
 /*
@@ -5,7 +7,7 @@ public class InvestmentAnalysisSystem {
 */
 
 
-    private Scanner src
+    private  Scanner src;
 
     private int coupon = 10; //paid to investor at regular intervals  --> should be in percentage.
 
@@ -16,7 +18,7 @@ public class InvestmentAnalysisSystem {
 
     private int payout = 0;
 
-    private boolean inflation = true;
+    private static boolean inflation;
 
 
     public InvestmentAnalysisSystem() {
@@ -29,17 +31,21 @@ public class InvestmentAnalysisSystem {
     private double investorsReceiveBack;
 
 
-    public static double sumAtTermPlusFinalCouponPayment(double invest, double coupon, double frequency) {
+    public double sumAtTermPlusFinalCouponPayment(boolean inflation, double invest, double coupon, double frequency) {
 
 
         double couponInPercent = coupon * 0.01;
 
-        double investorsReceiveBack = invest * couponInPercent * frequency;
+        double  investorsReceiveBack = invest * couponInPercent * frequency;
 
-        if (inflation) {
+       if (inflation) {
 
-            sumAtTermPlusFinalCouponPayment(investorsReceiveBack, r , frequency)
-        }
+           double inflationRate = src.nextDouble();
+
+           return sumOfDiscountedPaymentsWithInflationRateApplied(investorsReceiveBack, inflationRate, frequency);
+
+       }
+
         return investorsReceiveBack;
 
 
@@ -48,10 +54,12 @@ public class InvestmentAnalysisSystem {
 
     public double macaulayDuration(double coupon, double value) {
 
+
+        return 0;
     }
 
 
-    public double sumOfDiscountedPaymentsWithInflationRateApplied(double value, double r, double N) {
+    public static double sumOfDiscountedPaymentsWithInflationRateApplied(double value, double inflationRate, double years) {
 
         /*
         int x = 0;//value
@@ -59,9 +67,8 @@ public class InvestmentAnalysisSystem {
         int N = 0;// years
         */
 
-        double discountedPaymets = 0.0; //result
 
-        discountedPaymets = sum / (1 + r) ^ N;
+        double discountedPaymets = value / (1 + inflationRate)^years;
 
 
         return discountedPaymets;
