@@ -9,7 +9,10 @@ public class Bond {
 
     private String expiryDate;
 
+
+
     private double coupon;  //percentage of investment, paid to investor at regular intervals.
+
 
     private double frequency; //year
 
@@ -31,5 +34,15 @@ public class Bond {
 
 
 
+    public double getFrequency() {
+        return frequency;
+    }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public double getCoupon() {
+        return coupon;
+    }
 }

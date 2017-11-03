@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class InvestmentAnalysisSystem {
+public class InvestmentAnalysisSystem  {
 
 /*
     Deadline: November 30th, 4pm.
@@ -36,7 +36,7 @@ public class InvestmentAnalysisSystem {
 
         double couponInPercent = coupon * 0.01;
 
-        double  investorsReceiveBack = invest * couponInPercent * frequency;
+        double  investorsReceiveBack = invest * (1+couponInPercent) * frequency;
 
        if (inflation) {
 
@@ -52,8 +52,10 @@ public class InvestmentAnalysisSystem {
     }
 
 
-    public double macaulayDuration(double coupon, double value) {
+    public double macaulayDuration(Bond bond) {
 
+
+        bond.getFrequency()
 
         return 0;
     }
