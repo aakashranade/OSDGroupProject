@@ -1,2 +1,4 @@
-public class Portfolio {
+public class Portfolio<T> {
+
+    T data;
 }

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Investor {
+public class Investor extends Portfolio {
 
 
 

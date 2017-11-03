@@ -70,7 +70,7 @@ public class InvestmentAnalysisSystem  {
         */
 
 
-        double discountedPaymets = value / (1 + inflationRate)^years;
+        double discountedPaymets = (value / (1 + inflationRate)) ^ years;
 
 
         return discountedPaymets;
