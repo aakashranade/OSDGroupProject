@@ -55,7 +55,7 @@ public class InvestmentAnalysisSystem  {
     public double macaulayDuration(Bond bond) {
 
 
-        bond.getFrequency()
+        bond.getFrequency();
 
         return 0;
     }
