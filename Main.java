@@ -27,7 +27,9 @@ public class Main {
 
         System.out.println("returns: "+ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.0) );//0.0 indicates inflation rate.
 
+
         //exclude original price!
+
 
 
 
