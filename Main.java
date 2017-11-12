@@ -22,10 +22,10 @@ public class Main {
 
 
         client1.isBuying(bond1);
-        ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.0); //0.0 indicates inflation rate.
+        ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.05); //0.0 indicates inflation rate.
 
 
-        System.out.println("returns: "+ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.0) );//0.0 indicates inflation rate.
+        System.out.println("returns: "+ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.03) );//0.0 indicates inflation rate.
 
 
         //exclude original price!
