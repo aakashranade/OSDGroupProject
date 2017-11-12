@@ -5,38 +5,39 @@ public class Investor extends Portfolio {
 
 
 
-    String name;
+    private String name;
 
-    int invest; //money
+    private int investment; //money
 
-    ArrayList<Bond> portfolio;
-
-
-
-/*
-    investor is buying bonds
-*/
+    private ArrayList<Bond> portfolio;
 
 
 
-    public Investor(String name, int invest) {
+    public Investor(String name, int investment) {
         this.name = name;
-        this.invest = invest;
+        this.investment = investment;
         portfolio = new ArrayList<>();
     }
 
+    //<!----------------------Getter functions---------------------------!>
+
+    public void setName(String name) { this.name = name; }
+
+    public void isBuying(Bond bond) { bond.setPrice(investment); }
+
+    //<!----------------------Getter functions---------------------------!>
+
+
+    //<!----------------------Setter functions---------------------------!>
+
+    public void setInvestment(int investment) { this.investment = investment; }
+
+    public void setPortfolio(ArrayList<Bond> portfolio) { this.portfolio = portfolio; }
+
+    //<!----------------------Setter functions---------------------------!>
 
 
 
-
-    public int getInvest() {
-        return invest;
-    }
-
-
-    public void setInvest(int invest) {
-        this.invest = invest;
-    }
 
 
 }

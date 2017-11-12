@@ -1,59 +1,35 @@
 import java.util.Scanner;
 
-public class InvestmentAnalysisSystem  {
+public class InvestmentAnalysisSystem {
 
 /*
     Deadline: November 30th, 4pm.
 */
 
 
-    private  Scanner src;
-
-    private int coupon = 10; //paid to investor at regular intervals  --> should be in percentage.
+    public InvestmentAnalysisSystem() {/*default constructor*/}
 
 
-    private int investedSum = 0;
-
-    private int price = 0; //investor pays this with sum invested
-
-    private int payout = 0;
-
-    private static boolean inflation;
+    //<!----------------------General functions---------------------------!>
 
 
-    public InvestmentAnalysisSystem() {
+    public double sumOfPaymentWithTermPlusFinalCouponPayment(Bond bond, double inflationRate) {
 
-        src = new Scanner(System.in);
+        double investorsReceiveBack = 0.0;
 
-    }
+        if (inflationRate == 0.0) {
 
+            investorsReceiveBack = bond.getPrice() * bond.getCoupon() * bond.getFrequency() * bond.getTerm();
 
-    private double investorsReceiveBack;
+            return investorsReceiveBack;
+        }
 
-
-    public double sumAtTermPlusFinalCouponPayment(boolean inflation, double invest, double coupon, double frequency) {
-
-
-        double couponInPercent = coupon * 0.01;
-
-        double  investorsReceiveBack = invest * (1+couponInPercent) * frequency;
-
-       if (inflation) {
-
-           double inflationRate = src.nextDouble();
-
-           return sumOfDiscountedPaymentsWithInflationRateApplied(investorsReceiveBack, inflationRate, frequency);
-
-       }
-
-        return investorsReceiveBack;
-
+        return investorsReceiveBack / Math.pow((1 + inflationRate), bond.getTerm());
 
     }
 
 
     public double macaulayDuration(Bond bond) {
-
 
         bond.getFrequency();
 
@@ -61,22 +37,8 @@ public class InvestmentAnalysisSystem  {
     }
 
 
-    public static double sumOfDiscountedPaymentsWithInflationRateApplied(double value, double inflationRate, double years) {
 
-        /*
-        int x = 0;//value
-        int r = 0;// inflation rate r
-        int N = 0;// years
-        */
-
-
-        double discountedPaymets = (value / (1 + inflationRate)) ^ years;
-
-
-        return discountedPaymets;
-
-
-    }
+    //<!----------------------General functions---------------------------!>
 
 
 }
