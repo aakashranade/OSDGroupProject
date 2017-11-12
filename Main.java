@@ -12,7 +12,7 @@ public class Main {
         //String name, String purchaseDate, String expiryDate, , double coupon, double frequency, double price
 
 
-        Bond bond1 = new Bond("UK government bond", "2013/1/31", "2018/1/1", 0.1, 1.0);
+        Bond bond1 = new Bond("UK government bond", "2017/1/1", "2018/1/1", 0.1, 1.0);
         Bond bond2 = new Bond();
         Bond bond3 = new Bond();
         Bond bond4 = new Bond();
@@ -25,8 +25,9 @@ public class Main {
         ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.0); //0.0 indicates inflation rate.
 
 
-        System.out.println(ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.0) );//0.0 indicates inflation rate.
+        System.out.println("returns: "+ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.0) );//0.0 indicates inflation rate.
 
+        //exclude original price!
 
 
 
