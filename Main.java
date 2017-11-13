@@ -3,10 +3,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Investor client1 = new Investor("Jeongho" , 100);
-        Investor client2 = new Investor("Jeongho" , 140);
-        Investor client3 = new Investor("Jeongho" , 150);
-        Investor client4 = new Investor("Jeongho" , 160);
+        Investor client1 = new Investor("Jeongho", 100);
+        Investor client2 = new Investor("Jeongho", 140);
+        Investor client3 = new Investor("Jeongho", 150);
+        Investor client4 = new Investor("Jeongho", 160);
 
 
         //String name, String purchaseDate, String expiryDate, , double coupon, double frequency, double price
@@ -25,17 +25,20 @@ public class Main {
         ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.05); //0.0 indicates inflation rate.
 
 
-        System.out.println("returns: "+ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond1, 0.03) );//0.0 indicates inflation rate.
+        /*
+
+        query payout() : double
+        post:
+        result = payments->collect(amount)->sum()
+
+        */
+        client1.payout(bond1);
 
 
         //exclude original price!
 
 
-
-
-
     }
-
 
 
 }

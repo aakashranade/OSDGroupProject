@@ -18,6 +18,7 @@ public class Bond {
     private double price;
 
 
+
     public Bond() {
     }// default constructor
 
@@ -40,7 +41,7 @@ public class Bond {
     }
 
 
-    //<!----------------------Getter functions---------------------------!>
+    //<!----------------------functions---------------------------!>
 
     public String getName() { return name; }
 
@@ -84,10 +85,6 @@ public class Bond {
 
 
     }
-    //<!----------------------Getter functions---------------------------!>
-
-
-    //<!----------------------Setter functions---------------------------!>
 
     public void setPrice(double price) { this.price = price; }
 
@@ -95,7 +92,7 @@ public class Bond {
 
     public void setFrequency(double frequency) { this.frequency = frequency; }
 
-    //<!----------------------Setter functions---------------------------!>
+    //<!----------------------functions---------------------------!>
 
 
 

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InvestmentAnalysisSystem {
@@ -7,10 +8,20 @@ public class InvestmentAnalysisSystem {
 */
 
 
-    public InvestmentAnalysisSystem() {/*default constructor*/}
+    private ArrayList<Bond> bondStream;
 
 
-    //<!----------------------General functions---------------------------!>
+
+    public InvestmentAnalysisSystem() {/*default constructor*/
+
+
+        bondStream = new ArrayList<>();
+
+        bondStream.add()
+    }
+
+
+    //<!---------------------- functions---------------------------!>
 
 
     public double sumOfPaymentWithTermPlusFinalCouponPayment(Bond bond, double inflationRate) {
@@ -37,7 +48,7 @@ public class InvestmentAnalysisSystem {
 
 
 
-    //<!----------------------General functions---------------------------!>
+    //<!---------------------- functions---------------------------!>
 
 
 }

@@ -25,10 +25,17 @@ public class Investor extends Portfolio {
 
     public void isBuying(Bond bond) { bond.setPrice(investment); }
 
-    //<!----------------------Getter functions---------------------------!>
+    public void payout(Bond bond){
 
+        bond.setPrice(investment);
 
-    //<!----------------------Setter functions---------------------------!>
+        InvestmentAnalysisSystem ias = new InvestmentAnalysisSystem();
+
+        double sum = ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond, 0.0);
+
+        System.out.println("Investor will benefit: " + sum);
+
+    }
 
     public void setInvestment(int investment) { this.investment = investment; }
 
