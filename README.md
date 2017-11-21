@@ -7,3 +7,8 @@ This dialog is dedicated for the people who have committed to coursework, please
 
 Friday 3, November 2017 - Jeongho Suh -m added the java files and template that we discussed on the last week.
 Sunday 12, November 2017 -Jeongho Suh -m basically redo all my codes and stick to simple coding style for understadings, now the code runs as expected including term calcuation, which was implemented by using purchasedate and expirydate.
+
+
+
+
+//should I store all the bonds in other than main mehtod?

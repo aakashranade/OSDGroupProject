@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -5,43 +6,47 @@ import java.util.Date;
 public class Bond {
 
 
-    private String name; // names of bonds e.g. UK government bond
+    //<!-- variables-->
+
+    private String name;
 
     private String purchaseDate; //date
 
-    private String expiryDate;
+    private String maturityDate;
 
-    private double coupon;  //percentage of investment, paid to investor at regular intervals.
+    private double coupon;
 
-    private double frequency; //year
+    private double frequency;
 
-    private double price;
+    private double issuePrice;
+
+    //<!-- variables-->
 
 
+
+
+    //<!---constructor--->
+
+
+
+    public Bond(String name, String purchaseDate, String maturityDate, double coupon, double issuePrice, double frequency) {
+
+        this.name = name;
+        this.purchaseDate = purchaseDate;
+        this.maturityDate = maturityDate;
+        this.coupon = coupon;
+        this.issuePrice = issuePrice;
+        this.frequency = frequency;
+
+    }
 
     public Bond() {
     }// default constructor
 
-
-    public Bond(String name, String purchaseDate, String expiryDate, double coupon, double frequency) {
-
-        this.name = name;
-        this.purchaseDate = purchaseDate;
-        this.expiryDate = expiryDate;
-        this.coupon = coupon;
-        this.frequency = frequency;
+    //<!---constructor--->
 
 
-    }
-
-    public Bond(String purchaseDate, String expiryDate) {
-
-        this.purchaseDate = purchaseDate;
-        this.expiryDate = expiryDate;
-    }
-
-
-    //<!----------------------functions---------------------------!>
+    //<!---getter--->
 
     public String getName() { return name; }
 
@@ -49,8 +54,8 @@ public class Bond {
         return frequency;
     }
 
-    public double getPrice() {
-        return price;
+    public double getIssuePrice() {
+        return issuePrice;
     }
 
     public double getCoupon() {
@@ -61,7 +66,7 @@ public class Bond {
 
         /*logic*/
 
-        // expiryDate-purchaseDate
+        // maturityDate-purchaseDate
 
         try {
             Date start;
@@ -71,12 +76,14 @@ public class Bond {
 
 
             start = dates.parse(this.purchaseDate);
-            end = dates.parse(this.expiryDate);
+            end = dates.parse(this.maturityDate);
 
             double difference = Math.abs(start.getTime() - end.getTime());
             double differenceByYear = (difference / (24 * 60 * 60 * 1000)) / 365;
 
-            return differenceByYear;
+            DecimalFormat decf = new DecimalFormat("##.0");
+
+            return Double.parseDouble(decf.format(differenceByYear));
 
         } catch (ParseException e) {
 
@@ -86,13 +93,18 @@ public class Bond {
 
     }
 
-    public void setPrice(double price) { this.price = price; }
+    //<!---getter--->
+
+    //<!---setter--->
+
+
+    public void setIssuePrice(double issuePrice) { this.issuePrice = issuePrice; }
 
     public void setCoupon(double coupon) { this.coupon = coupon; }
 
     public void setFrequency(double frequency) { this.frequency = frequency; }
 
-    //<!----------------------functions---------------------------!>
+    //<!---setter--->
 
 
 

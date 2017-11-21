@@ -1,47 +1,102 @@
 import java.util.ArrayList;
 
-public class Investor extends Portfolio {
+public class Investor {
 
 
+    //<!-- variables-->
 
 
     private String name;
 
-    private int investment; //money
+    private double money; //money
 
-    private ArrayList<Bond> portfolio;
+    private Portfolio portfolio;
 
 
 
-    public Investor(String name, int investment) {
+
+    //<!-- variables-->
+
+
+    //<!---constructor--->
+
+    public Investor(String name, int money, double inflationRate) {
         this.name = name;
-        this.investment = investment;
-        portfolio = new ArrayList<>();
+        this.money = money;
+        portfolio = new Portfolio(inflationRate);
     }
 
-    //<!----------------------Getter functions---------------------------!>
 
-    public void setName(String name) { this.name = name; }
+    public Investor() {
+    } //default constructor
 
-    public void isBuying(Bond bond) { bond.setPrice(investment); }
+    //<!---constructor--->
 
-    public void payout(Bond bond){
 
-        bond.setPrice(investment);
+    //<!---getter--->
 
-        InvestmentAnalysisSystem ias = new InvestmentAnalysisSystem();
 
-        double sum = ias.sumOfPaymentWithTermPlusFinalCouponPayment(bond, 0.0);
+    public String getName() {
+        return name;
+    }
 
-        System.out.println("Investor will benefit: " + sum);
+
+    public double getMoney() {
+        return money;
+    }
+
+
+    //<!---getter--->
+
+
+    //<!---setter--->
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
+
+
+    //<!---setter--->
+
+
+
+    
+    public void purchasing(Bond... bonds){
+
+        /*logic*/
+
+
+        for (Bond bond: bonds) {
+            portfolio.add(new InvestmentAnalysisSystem(this, bond));
+        }
+
+
+        //new InvestmentAnalysisSystem(this, bond );
 
     }
 
-    public void setInvestment(int investment) { this.investment = investment; }
 
-    public void setPortfolio(ArrayList<Bond> portfolio) { this.portfolio = portfolio; }
+    public void portfolioReader() {
 
-    //<!----------------------Setter functions---------------------------!>
+         portfolio.print();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
