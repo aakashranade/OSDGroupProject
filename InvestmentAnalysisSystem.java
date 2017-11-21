@@ -40,7 +40,7 @@ public class InvestmentAnalysisSystem {
     public double payout() {
 
 
-        double payout = bond.getTerm() * bond.getCoupon() + investor.getMoney();
+        double payout = bond.getTerm() * bond.getCoupon() + investor.getMoney() *bond.getFrequency();
 
         return payout;
 

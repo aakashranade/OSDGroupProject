@@ -20,10 +20,10 @@ public class Investor {
 
     //<!---constructor--->
 
-    public Investor(String name, int money, double inflationRate) {
+    public Investor(String name, int money, double r) {
         this.name = name;
         this.money = money;
-        portfolio = new Portfolio(inflationRate);
+        portfolio = new Portfolio(r);
     }
 
 
@@ -69,6 +69,7 @@ public class Investor {
     public void purchasing(Bond... bonds){
 
         /*logic*/
+
 
 
         for (Bond bond: bonds) {
