@@ -78,7 +78,7 @@ public class InvestmentAnalysisSystem {
         double val = 0;
 
 
-        for (int i = 0; i <= bond.getTerm(); i++) {
+        for (int i = 1; i <= bond.getTerm(); i++) {
 
 
             val += bond.getCoupon() / Math.pow((1 + r), i);
