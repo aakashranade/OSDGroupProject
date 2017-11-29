@@ -8,11 +8,11 @@ public class Investor {
 
     private String name;
 
-    private double money; //money
+    private double balance; //balance
 
     private Portfolio portfolio;
 
-
+    private int numberOfBonds;
 
 
     //<!-- variables-->
@@ -20,9 +20,9 @@ public class Investor {
 
     //<!---constructor--->
 
-    public Investor(String name, int money, double r) {
+    public Investor(String name, int balance, double r) {
         this.name = name;
-        this.money = money;
+        this.balance = balance;
         portfolio = new Portfolio(r);
     }
 
@@ -36,13 +36,17 @@ public class Investor {
     //<!---getter--->
 
 
+    public int getNumberOfBonds() {
+        return numberOfBonds;
+    }
+
     public String getName() {
         return name;
     }
 
 
-    public double getMoney() {
-        return money;
+    public double getBalance() {
+        return balance;
     }
 
 
@@ -51,13 +55,14 @@ public class Investor {
 
     //<!---setter--->
 
+
     public void setName(String name) {
         this.name = name;
     }
 
 
-    public void setMoney(double money) {
-        this.money = money;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
 
@@ -66,44 +71,55 @@ public class Investor {
 
     //<!---functions--->
 
-    public void purchasing(Bond... bonds){
+    public void purchasing(Bond... bonds) {
 
         /*logic*/
 
 
+        for (Bond bond : bonds) {
 
-        for (Bond bond: bonds) {
-            portfolio.add(new InvestmentAnalysisSystem(this, bond));
+            numberOfBonds++;
+
+            if(balance > bond.getIssuePrice()) {
+
+                balance -= bond.getIssuePrice();
+
+                portfolio.add(new InvestmentAnalysisSystem(this, bond));
+
+                portfolio.print(numberOfBonds-1);
+
+
+
+            }else{
+
+
+
+                System.out.println("+------------------------------------------------------------------------+ ");
+                System.out.println("| "+bond.getName()+" cannot be purchased of your account balance is too low           | ");
+                System.out.println("+------------------------------------------------------------------------+ ");
+
+            }
+
+
         }
-
-
-        //new InvestmentAnalysisSystem(this, bond );
-
     }
 
 
-    public void portfolioReader() {
 
-         portfolio.print();
+
+
+
+    //new InvestmentAnalysisSystem(this, bond );
+
+    public void analysePortfolio(){
+
+
+
 
     }
+
 
     //<!---setter--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
