@@ -34,19 +34,6 @@ public class Portfolio extends ArrayList<InvestmentAnalysisSystem> {
 
             System.out.println("# of bonds : "+this.get(i).getBondPurchasedNumber());
 
-          /*  System.out.println(
-                    "<!--Fixed value for r = 0.02 to check testcase--> " + "\n\n" +
-                            "r: 0.02 \n" +
-                            "value(0.02): " + this.get(i).value(0.02) + "\n" +
-                            "macaulayDuration(0.02): " + this.get(i).macaulayDuration(0.02) + "\n" +
-                            "irr: " + this.get(i).calculateIrr() + "\n\n"+
-                    "<!--Fixed value for r = 0.02 to check testcase-->\n "
-
-            );
-*/
-
-
-
 
     }
 }
